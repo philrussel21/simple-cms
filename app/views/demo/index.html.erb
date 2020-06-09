@@ -1,0 +1,20 @@
+<h1>Hello World!</h1>
+
+<%= link_to("Home Page", 'demo/home') %>
+
+<br>
+
+<%# Home page with params %>
+<%= link_to("Home Page with Params", :action => 'home', :id => '21', :page => '6') %>
+
+<br>
+
+<%# Link to About Us %>
+<%= link_to("About Us", 'demo/about') %>
+<br>
+
+<%# Link to Contact us %>
+<%= link_to("Contact Us", 'demo/contact') %>
+<br>
+
+<p><%= link_to("All Subjects", subjects_path)%></p>

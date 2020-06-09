@@ -1,0 +1,23 @@
+<h1>Home Page</h1>
+
+<%# works %>
+<%# <%= link_to("Index Page", '/') %>
+<%# also works %>
+<%= link_to("Index Page", :action => 'index') %>
+<br>
+
+
+ID: <%= @id %>
+<br>
+same ID: <%= params[:id]%>
+<br>
+Page: <%= params['page'] %>
+<br>
+
+<%# Link to About Us %>
+<%= link_to("About Us", 'about') %>
+<br>
+
+<%# Link to Contact us %>
+<%= link_to("Contact Us", 'contact') %>
+<br>
