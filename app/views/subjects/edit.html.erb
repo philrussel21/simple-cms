@@ -1,2 +1,19 @@
-<h1>Subjects#edit</h1>
-<p>Find me in app/views/subjects/edit.html.erb</p>
+<%= link_to("<< Back to List", subjects_path, :class => 'back-link') %>
+
+<div class="subjects edit">
+  <h2>Update Subject</h2>
+
+  <%= form_for(@edit_subject) do |f| %>
+    <%# :url and :method can be left out and Rails would still know what to do with the edited
+    # object. In this edit case, Rails knows that the record stored in the @edit_subject variable
+    already exist in the database so it would send it to the Update URL and uses the PATCH method
+    to submit it.%>
+   
+   <%= render(:partial =>'form', :locals => {:f => f})%>
+
+    <div class="form-buttons">
+      <%= f.submit("Update Subject") %>
+    </div>
+
+  <% end %>
+</div>
