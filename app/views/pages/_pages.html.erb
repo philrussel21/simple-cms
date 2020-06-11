@@ -1,0 +1,30 @@
+<div class="pages index">
+  <h2>List of all Pages</h2>
+
+  <%= link_to("Add New Page", new_subject_page_path(@subject.pages.first.subject_id), :class => 'action new') %>
+
+  <table class="listing" summary="Subject list">
+    <tr class="header">
+      <th>#</th>
+      <th>Page Name</th>
+      <th>Visible</th>
+      <th>Actions</th>
+    </tr>
+    <% @subject.pages.each do |page| %>
+    <tr>
+      <td><%= page.position %></td>
+      <td><%= page.name %></td>
+      <td class="center"><%= page.visible ? 'Yes' : 'No' %></td>
+      <td class="actions">
+        <%= link_to("Show", subject_page_path(page), :class => 'action show') %>
+        <% #link_to("Show", page_path(page.id), :class => 'action show') -> also works %>
+        <% #but resourceful routes extracts the id from the page and pass it to page_path() %>
+
+        <%= link_to("Edit", edit_subject_page_path(page), :class => 'action edit') %>
+
+        <%= link_to("Delete", delete_subject_page_path(page), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

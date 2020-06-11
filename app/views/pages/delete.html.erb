@@ -1,12 +1,10 @@
-<%= link_to("<< Back to List", pages_path, :class => 'back-link') %>
+<%= link_to("<< Back to List", subject_path(params[:id]), :class => 'back-link') %>
 
 <div class="delete page">
   <h2>Delete Page</h2>
 
-  <%= form_for(@delete_page) do |f| %>
-    <%# <%= form_for(@delete_page, :method => 'delete') do |f| %> %>
-    <%# :url and :method can be left out and Rails would still know what to do with the newly
-    # created object.%>
+  <%= form_for(@delete_page, :url => subject_page_path, :method => 'delete') do |f| %>
+    <%# <%= form_for(@delete_page, :method => 'delete') do |f| %>
     <table>
     <tr>
     <th>Page Name: </th>

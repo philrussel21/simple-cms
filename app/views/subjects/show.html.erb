@@ -28,8 +28,8 @@
 
 </div>
 <hr>
-<div class="pages">
-    <% @subject.pages.each do |page| %>
-      <p><%= link_to page.name, subject_page_path(page) %></p>
-    <%end%>
-</div>
+<%if @subject.pages.empty?%>
+  <p><%= link_to("Add New Page", new_subject_page_path(@subject), :class => 'action new') %></p>
+<%else%>
+  <p><%= render(:partial => '/pages/pages') %></p>
+<%end%>
