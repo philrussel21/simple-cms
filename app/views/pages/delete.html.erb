@@ -3,7 +3,8 @@
 <div class="delete page">
   <h2>Delete Page</h2>
 
-  <%= form_for(@delete_page, :action => 'destroy', :method => 'delete') do |f| %>
+  <%= form_for(@delete_page) do |f| %>
+    <%# <%= form_for(@delete_page, :method => 'delete') do |f| %> %>
     <%# :url and :method can be left out and Rails would still know what to do with the newly
     # created object.%>
     <table>

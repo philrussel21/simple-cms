@@ -27,3 +27,9 @@
   </table>
 
 </div>
+<hr>
+<div class="pages">
+    <% @subject.pages.each do |page| %>
+      <p><%= link_to page.name, subject_page_path(page) %></p>
+    <%end%>
+</div>

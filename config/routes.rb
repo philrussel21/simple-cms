@@ -10,13 +10,18 @@ Rails.application.routes.draw do
     member do
       get :delete
     end
-  end
-
-  resources :pages do
-    member do
-      get :delete
+    resources :pages do
+      member do
+        get :delete
+      end
     end
   end
+
+  # resources :pages do
+  #   member do
+  #     get :delete
+  #   end
+  # end
 
   # get 'pages/index'
   # get 'pages/show'
