@@ -1,20 +1,20 @@
 <h1>Hello World!</h1>
 
-<%= link_to("Home Page", 'demo/home') %>
+<p class="text-primary"><%= link_to("Home Page", 'demo/home') %></p>
 
 <br>
 
 <%# Home page with params %>
-<%= link_to("Home Page with Params", :action => 'home', :id => '21', :page => '6') %>
+<p><%= link_to("Home Page with Params", :action => 'home', :id => '21', :page => '6') %></p>
 
 <br>
 
 <%# Link to About Us %>
-<%= link_to("About Us", 'demo/about') %>
+<p><%= link_to("About Us", 'demo/about') %></p>
 <br>
 
 <%# Link to Contact us %>
-<%= link_to("Contact Us", 'demo/contact') %>
+<p><%= link_to("Contact Us", 'demo/contact') %></p>
 <br>
 
 <p><%= link_to("All Subjects", subjects_path)%></p>

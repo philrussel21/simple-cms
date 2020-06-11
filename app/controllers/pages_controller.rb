@@ -23,9 +23,19 @@ class PagesController < ApplicationController
   end
 
   def edit
+    @subjects = subject_names_with_id(Subject.all)
+    @edit_page = Page.find(params[:id])
   end
 
   def update
+    @edited_page = Page.find(params[:id])
+
+    if @edited_page.update(page_params)
+      redirect_to(page_path(@edited_page))
+    else
+      edit
+      render('edit')
+    end
   end
 
   def delete

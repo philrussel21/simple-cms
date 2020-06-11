@@ -1,2 +1,19 @@
-<h1>Pages#edit</h1>
-<p>Find me in app/views/pages/edit.html.erb</p>
+<%= link_to("<< Back to List", pages_path, :class => 'back-link') %>
+
+<div class="pages new">
+  <h2>Edit Page</h2>
+
+  <%= form_for(@edit_page) do |f| %>
+    <%# :url and :method can be left out and Rails would still know what to do with the newly
+    # created object.%>
+       
+       
+       <%= render(:partial =>'form', :locals => {:f => f})%>
+
+
+    <div class="form-buttons">
+      <%= f.submit("Update Page") %>
+    </div>
+
+  <% end %>
+</div>
